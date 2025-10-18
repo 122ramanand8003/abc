@@ -1,0 +1,935 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3ff; /* Light purple fallback */
+            /* Odoo-inspired subtle gradient background */
+            background-image: radial-gradient(circle at 1% 1%, #f3e8ff, transparent 40%), radial-gradient(circle at 99% 99%, #e9d5ff, transparent 40%);
+        }
+        /* Custom styles for a cleaner look */
+        .card {
+            background-color: white;
+            border-radius: 1.5rem; /* More rounded corners */
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-family: 'Kalam', cursive;
+            font-size: 2.25rem; /* larger, like the attachment */
+            font-weight: 400;
+            color: #0f172a; /* near-black navy */
+            margin-bottom: 0.75rem;
+            padding-bottom: 0;
+            border-bottom: none;
+            position: relative;
+            display: inline-block;
+        }
+        /* Small highlight underline similar to the image (yellow/orange swoosh) */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            right: -6px;
+            bottom: 6px;
+            height: 14px;
+            background: linear-gradient(90deg, rgba(250,204,21,0.95), rgba(250,160,28,0.95));
+            border-radius: 6px;
+            z-index: -1;
+            transform: translateY(4px);
+            opacity: 0.95;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border-radius: 9999px; /* Pill-shaped buttons */
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .btn-primary {
+            background-color: #7e22ce; /* Solid Odoo purple */
+            color: white;
+            box-shadow: 0 4px 14px rgba(126, 34, 206, 0.25);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #6d28d9;
+            box-shadow: 0 8px 20px rgba(126, 34, 206, 0.3);
+        }
+        .icon-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: 1.25rem; /* Slightly larger radius */
+            color: #374151;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+        .icon-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+            color: #7c3aed; /* Purple hover color */
+        }
+        
+        .icon-btn svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            stroke-width: 1.5;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-btn:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Colorful icon interactions: fill/stroke change on hover/focus/active */
+        .icon-btn svg path,
+        .icon-btn svg circle,
+        .icon-btn svg rect {
+            transition: stroke 200ms ease, fill 200ms ease, color 200ms ease, transform 200ms ease;
+            stroke: currentColor;
+            fill: currentColor;
+        }
+
+        /* Default icon muted color */
+        .icon-btn { color: #374151; }
+
+        /* When hovered/focused/active — make icons colorful */
+        .icon-btn:hover,
+        .icon-btn:focus,
+        .icon-btn:active,
+        .icon-btn:focus-visible {
+            color: #7c3aed; /* purple accent */
+            outline: none;
+        }
+
+        /* For keyboard accessibility show a clear focus ring */
+        .icon-btn:focus-visible {
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        /* WhatsApp brand hover behavior (no solid green background) */
+        .brand-whatsapp:hover,
+        .brand-whatsapp:focus {
+            color: #25D366;
+            background-color: rgba(37,211,102,0.06);
+            box-shadow: 0 8px 18px rgba(37,211,102,0.08);
+        }
+
+        /* Small press animation for tactile feedback */
+        .icon-btn:active { transform: translateY(-2px) scale(0.99); }
+
+        /* Per-brand interactive colors for 'You can also find us on' links */
+        .brand-justdial:hover,
+        .brand-justdial:focus {
+            color: #ef4444; /* rose/red accent */
+            background-color: rgba(239,68,68,0.08);
+            box-shadow: 0 8px 18px rgba(239,68,68,0.08);
+        }
+        .brand-indiamart:hover,
+        .brand-indiamart:focus {
+            color: #10b981; /* emerald/green */
+            background-color: rgba(16,185,129,0.06);
+            box-shadow: 0 8px 18px rgba(16,185,129,0.06);
+        }
+        .brand-youtube:hover,
+        .brand-youtube:focus {
+            color: #ef4444; /* youtube red */
+            background-color: rgba(239,68,68,0.06);
+            box-shadow: 0 8px 18px rgba(239,68,68,0.08);
+        }
+        .brand-google:hover,
+        .brand-google:focus {
+            color: #1a73e8; /* Google blue */
+            background-color: rgba(26,115,232,0.06);
+            box-shadow: 0 8px 18px rgba(26,115,232,0.08);
+        }
+        .brand-twitter:hover,
+        .brand-twitter:focus {
+            color: #1d9bf0; /* twitter blue */
+            background-color: rgba(29,155,240,0.06);
+            box-shadow: 0 8px 18px rgba(29,155,240,0.08);
+        }
+        .brand-local:hover,
+        .brand-local:focus {
+            color: #6366f1; /* indigo */
+            background-color: rgba(99,102,241,0.06);
+            box-shadow: 0 8px 18px rgba(99,102,241,0.08);
+        }
+
+        /* Quick Actions per-button hover colors (call, whatsapp, website, email, location) */
+        .icon-btn-call:hover svg { color: #3b82f6; } /* Blue */
+        .icon-btn-whatsapp:hover svg { color: #25D366; } /* WhatsApp Green */
+        .icon-btn-website:hover svg { color: #6366f1; } /* Indigo */
+        .icon-btn-email:hover svg { color: #f97316; } /* Orange */
+        .icon-btn-location:hover svg { color: #ef4444; } /* Red */
+
+        /* Ensure SVG icons inside brand links use the container color */
+        .brand-justdial svg,
+        .brand-indiamart svg,
+        .brand-youtube svg,
+        .brand-twitter svg,
+        .brand-local svg {
+            transition: transform 200ms ease, fill 200ms ease, stroke 200ms ease;
+            color: inherit; /* inherit from the parent color set above */
+            stroke: currentColor;
+            fill: currentColor;
+        }
+
+        /* Styles for sketch annotations */
+        .sketch-text {
+            font-family: 'Kalam', cursive;
+            color: #4a044e; /* Dark purple */
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* New annotation positioning helpers to avoid overlap with actionable UI */
+        .sketch-annotation {
+            position: absolute;
+            z-index: 10; /* above doodles but below interactive elements by default */
+            pointer-events: none; /* Decorative only */
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Start here: JS will position this element; keep default visual styles but remove fixed offsets */
+        .sketch-annotation.sketch-annotation-start {
+            position: absolute; /* positioning driven by JS */
+            pointer-events: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            z-index: 15;
+            transform: none;
+        }
+
+        /* Logo annotation (top-right) kept subtle */
+        .sketch-annotation.sketch-annotation-logo {
+            top: 22%;
+            right: 6%;
+            transform: translate(0, -50%);
+        }
+        .sketch-annotation.sketch-annotation-logo .logo-arrow { transform: rotate(6deg); }
+
+        /* Verified annotation moved slightly to the left and above the pill to prevent overlap */
+        .sketch-annotation.sketch-annotation-verified {
+            top: 56%;
+            left: 38%;
+            transform: translate(-40%, -60%);
+        }
+        .sketch-annotation.sketch-annotation-verified .verified-arrow { transform: rotate(-6deg); }
+
+        /* Small shadow behind sketch text to improve legibility over busy backgrounds */
+        .sketch-text {
+            text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        /* Ensure Verified pill (interactive) sits above annotations */
+        .btn[aria-haspopup],
+        .inline-flex.items-center.gap-2,
+        .btn[aria-expanded],
+        #open-verified-modal {
+            position: relative;
+            z-index: 30;
+        }
+
+        /* Responsive tweaks: reduce annotation sizes and shift positions on medium screens */
+        @media (max-width: 1024px) {
+            .sketch-annotation.sketch-annotation-start { left: 18%; top: 64%; }
+            .sketch-annotation.sketch-annotation-verified { left: 36%; top: 60%; }
+            .sketch-text { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 768px) {
+            /* Show annotations on mobile, but scaled and positioned to avoid covering buttons */
+            .sketch-annotation { display: flex; pointer-events: none; z-index: 15; }
+            .sketch-text { font-size: 0.95rem; }
+            .sketch-annotation.sketch-annotation-start { left: 8%; top: 58%; transform: translate(0%, -40%) scale(0.9); }
+            .sketch-annotation.sketch-annotation-verified { left: 44%; top: 54%; transform: translate(-40%, -50%) scale(0.9); }
+            .sketch-arrow { width: 56px !important; height: 42px !important; }
+        }
+        /* Styles for form in popup */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #7e22ce;
+            box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #7e22ce, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Styles for star rating */
+        .star-rating svg {
+            color: #d1d5db; /* gray-300 */
+            transition: color 0.2s;
+        }
+        .star-rating:hover svg,
+        .star-rating svg.selected {
+            color: #f59e0b; /* amber-500 */
+        }
+
+        .underline-swoosh {
+            position: relative;
+            display: inline-block;
+        }
+        .underline-swoosh::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 22'%3E%3Cpath d='M1.33 15.11s43.58-15.22 103.88-10.3c60.3 4.92 90.96 1.07 101.48-1.12' fill='none' stroke='%238b5cf6' stroke-linecap='round' stroke-miterlimit='10' stroke-width='6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        /* Hero handwritten H1 styling */
+        .underline-swoosh {
+            font-family: 'Kalam', cursive;
+            font-size: 3.25rem; /* big and bold handwritten */
+            line-height: 1.0;
+            color: #071029; /* dark navy */
+            letter-spacing: -0.5px;
+        }
+
+        /* Yellow/orange swoosh behind part of the hero text — attached to .swoosh-target so it scales */
+        .swoosh-target { position: relative; display: inline-block; }
+        .swoosh-target::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -0.05em; /* nudge downward so it sits behind the word */
+            width: calc(100% + 1.2em); /* extend slightly beyond word edges */
+            height: 0.28em;
+            background: linear-gradient(90deg, #f6b042 0%, #f2a82f 100%);
+            border-radius: 0.25em;
+            transform: translateX(-50%) translateY(0.1em) rotate(-6deg);
+            z-index: -1;
+            opacity: 0.98;
+            pointer-events: none;
+        }
+
+        /* Blue underline accent for emphasis similar to attachment */
+        .underline-swoosh .underline-accent {
+            position: relative;
+        }
+        .underline-swoosh .underline-accent::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            bottom: -6px;
+            height: 10px;
+            background: linear-gradient(90deg,#7fd3ff,#5fb9ff);
+            border-radius: 6px;
+            z-index: -1;
+            transform: translateY(2px);
+            opacity: 0.95;
+        }
+
+        /* Responsive adjustments for the swoosh */
+        @media (max-width: 1024px) {
+            .swoosh-target::after { width: calc(100% + 1em); height: 0.26em; top: -0.02em; transform: translateX(-50%) translateY(0.08em) rotate(-6deg); }
+        }
+        @media (max-width: 640px) {
+            .underline-swoosh { font-size: 2.25rem; } /* scale down the H1 on small devices */
+            .swoosh-target::after { width: calc(100% + 0.6em); height: 0.22em; top: 0em; transform: translateX(-50%) translateY(0.12em) rotate(-7deg); }
+            .underline-swoosh .underline-accent::after { height: 8px; }
+        }
+
+        /* Doodle/Brush Stroke Effects */
+        .brush-stroke-bg {
+            position: relative;
+            overflow: hidden; /* To contain the pseudo-element */
+        }
+        .brush-stroke-bg::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='100' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 10 50 Q 50 20 100 50 T 190 50' fill='none' stroke='rgba(233, 213, 255, 0.5)' stroke-width='40' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50% auto;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .brush-stroke-bg > * {
+            position: relative; /* Ensure content is on top of the pseudo-element */
+            z-index: 1;
+        }
+
+        .doodle-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='25' r='4' stroke='%23e9d5ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 70 15 L 80 25 M 80 15 L 70 25' stroke='%23e9d5ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 15 70 L 25 80 M 25 70 L 15 80' stroke='%23f3e8ff' stroke-width='3' fill='none'/%3E%3Ccircle cx='80' cy='75' r='6' stroke='%23f3e8ff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-color: #fcfaff; /* Slightly different bg to make doodle pop */
+        }
+
+        /* Decorative teal circle behind the Follow Us card (like the attached image) */
+        .follow-doodle {
+            position: relative;
+            overflow: visible; /* allow pseudo-element to show outside */
+        }
+        .follow-doodle::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            /* SVG brush-ring to resemble the attached image (turquoise sketch ring) */
+            background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20240%20240'%3E%3Ccircle%20cx='120'%20cy='120'%20r='80'%20stroke='%2300d4c4'%20stroke-width='20'%20fill='none'%20stroke-linecap='round'%20stroke-dasharray='480'%20stroke-dashoffset='60'%20stroke-opacity='0.95'/%3E%3Cpath%20d='M180%2060c-8%2018-28%2034-44%2040'%20stroke='%2300d4c4'%20stroke-width='20'%20fill='none'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-opacity='0.95'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            right: -50px;
+            top: -40px;
+            z-index: 0;
+            transform: rotate(-6deg);
+            pointer-events: none; /* non-interactive decoration */
+        }
+        .follow-doodle > * { position: relative; z-index: 1; }
+
+        /* Follow Us icons: subtle brand tints and strong hover colors */
+        .follow-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280; /* muted default */
+            transition: color 220ms ease, transform 180ms ease;
+        }
+        .follow-icons svg {
+            width: 2rem; height: 2rem;
+            transition: transform 180ms ease, color 220ms ease, fill 220ms ease;
+            color: currentColor;
+            fill: currentColor;
+        }
+        .follow-icons a:hover { transform: translateY(-4px); }
+
+        /* Default soft tints (subtle) */
+        .follow-icons a:nth-child(1) svg { color: rgba(24,119,242,0.12); }
+        .follow-icons a:nth-child(2) svg { color: rgba(0,0,0,0.08); }
+        .follow-icons a:nth-child(3) svg { color: rgba(225,48,108,0.10); }
+        .follow-icons a:nth-child(4) svg { color: rgba(0,119,181,0.10); }
+
+        /* Full brand color on hover/focus */
+        .follow-icons a:nth-child(1):hover svg,
+        .follow-icons a:nth-child(1):focus svg { color: #1877F2; } /* Facebook blue */
+        .follow-icons a:nth-child(2):hover svg,
+        .follow-icons a:nth-child(2):focus svg { color: #111827; } /* neutral/black */
+        .follow-icons a:nth-child(3):hover svg,
+        .follow-icons a:nth-child(3):focus svg { color: #E1306C; } /* Instagram-ish */
+        .follow-icons a:nth-child(4):hover svg,
+        .follow-icons a:nth-child(4):focus svg { color: #0077B5; } /* LinkedIn blue */
+
+        /* Font Awesome brands in Follow Us */
+        .follow-icons i.fab {
+            font-size: 2.25rem; /* larger */
+            width: 2.75rem;
+            height: 2.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 180ms ease, transform 180ms ease, background-color 180ms ease;
+            color: rgba(107,114,128,0.7); /* stronger muted default */
+        }
+        .follow-icons a:hover i.fab,
+        .follow-icons a:focus i.fab { transform: translateY(-6px) scale(1.05); }
+
+        /* Slight colored background on hover for clarity */
+        .follow-icons a {
+            border-radius: 9999px;
+            padding: 6px;
+        }
+        .follow-icons a:hover { background: rgba(255,255,255,0.6); }
+
+    /* Full brand color by default for visibility */
+    .brand-facebook i.fab, .brand-facebook svg { color: #1877F2; fill: #1877F2; }
+    .brand-twitter i.fab, .brand-twitter svg { color: #1DA1F2; fill: #1DA1F2; }
+    .brand-instagram i.fab, .brand-instagram svg { color: #E1306C; fill: #E1306C; }
+    .brand-linkedin i.fab, .brand-linkedin svg { color: #0077B5; fill: #0077B5; }
+
+    /* Keep colors static on hover/focus */
+    .brand-facebook:hover i.fab, .brand-facebook:focus i.fab,
+    .brand-twitter:hover i.fab, .brand-twitter:focus i.fab,
+    .brand-instagram:hover i.fab, .brand-instagram:focus i.fab,
+    .brand-linkedin:hover i.fab, .brand-linkedin:focus i.fab { color: inherit !important; fill: inherit !important; transform: none !important; background: transparent !important; }
+
+        /* ----- Disable hover effects for Follow Us icons (user requested) ----- */
+        /* Prevent movement, scaling, background or color changes on hover/focus */
+        .follow-icons a,
+        .follow-icons a i.fab,
+        .follow-icons a svg {
+            transition: none !important;
+            transform: none !important;
+            background: transparent !important;
+        }
+
+        /* Ensure hover/focus keep same color as the default tint */
+        .brand-facebook:hover i.fab, .brand-facebook:focus i.fab { color: rgba(24,119,242,0.22) !important; }
+        .brand-twitter:hover i.fab, .brand-twitter:focus i.fab { color: rgba(29,155,240,0.18) !important; }
+        .brand-instagram:hover i.fab, .brand-instagram:focus i.fab { color: rgba(225,48,108,0.18) !important; }
+        .brand-linkedin:hover i.fab, .brand-linkedin:focus i.fab { color: rgba(0,119,181,0.18) !important; }
+
+        /* Also ensure previous svg hover rules don't change color */
+        .follow-icons a:hover svg, .follow-icons a:focus svg { color: inherit !important; fill: inherit !important; }
+
+        @media (max-width: 768px) {
+            .follow-doodle::before {
+                width: 120px;
+                height: 120px;
+                right: -24px;
+                top: -22px;
+            }
+        }
+        /* Center the Location quick-action on small screens without reducing its width */
+        @media (max-width: 640px) {
+            .icon-btn-location {
+                display: inline-flex !important;
+                margin-left: auto;
+                margin-right: auto;
+                justify-self: center !important;
+                grid-column: 1 / -1; /* Let it occupy the row so it centers in the grid */
+            }
+        }
+        
+        /* New Sketch Highlight BG */
+        .sketch-highlight-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .sketch-highlight-bg::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='150' viewBox='0 0 200 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='8.7'%3E%3Cpath d='M -20 45 L 220 15' stroke='%23FBBF24' stroke-width='30' stroke-linecap='round' /%3E%3Cpath d='M -20 85 L 220 55' stroke='%23FBBF24' stroke-width='30' stroke-linecap='round' /%3E%3Cpath d='M -20 125 L 220 95' stroke='%23FBBF24' stroke-width='30' stroke-linecap='round' /%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        /* Fancy variant: add animated blob behind Follow Us card */
+        .follow-fancy { position: relative; overflow: hidden; }
+        .follow-fancy::after {
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            top: -80px;
+            left: -80px;
+            background: radial-gradient(circle at 30% 30%, rgba(99,102,241,0.25), rgba(168,85,247,0.18), rgba(236,72,153,0.12));
+            filter: blur(20px);
+            border-radius: 50%;
+            animation: blobFloat 12s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+        @keyframes blobFloat {
+            0% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(40px,20px) scale(1.06); }
+            100% { transform: translate(20px,50px) scale(0.98); }
+        }
+
+        .sketch-highlight-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Decorative orange doodles for Business Hours */
+        .hours-doodle { position: relative; overflow: hidden; }
+        .hours-doodle::before,
+        .hours-doodle::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 70px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.9;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hours-doodle::before {
+            top: -10px;
+            /* three orange shards like the reference */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='70' viewBox='0 0 220 70'%3E%3Cpath d='M20 40c-6-2-9-4-10-6-2-3 2-6 5-5 3 1 12 4 12 4s-2 6-7 7z' fill='%23F59E0B'/%3E%3Cpath d='M100 55c8-18 14-27 18-31 2-1 4 1 3 3-2 8-6 19-9 29' fill='%23F59E0B'/%3E%3Cpath d='M192 44c9-3 15-6 18-8 2-2 1-5-2-5-4 1-16 6-20 9' fill='%23F59E0B'/%3E%3C/svg%3E");
+        }
+        .hours-doodle::after {
+            bottom: -12px;
+            transform: translateX(-50%) rotate(180deg);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='70' viewBox='0 0 220 70'%3E%3Cpath d='M20 40c-6-2-9-4-10-6-2-3 2-6 5-5 3 1 12 4 12 4s-2 6-7 7z' fill='%23F59E0B'/%3E%3Cpath d='M100 55c8-18 14-27 18-31 2-1 4 1 3 3-2 8-6 19-9 29' fill='%23F59E0B'/%3E%3Cpath d='M192 44c9-3 15-6 18-8 2-2 1-5-2-5-4 1-16 6-20 9' fill='%23F59E0B'/%3E%3C/svg%3E");
+        }
+        .hours-doodle > * { position: relative; z-index: 1; }
+        @media (max-width: 640px) {
+            .hours-doodle::before,
+            .hours-doodle::after { width: 160px; height: 50px; }
+        }
+
+        /* Floating animation for Follow Us icons */
+        @keyframes floatY {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0); }
+        }
+        .follow-icons a svg,
+        .follow-icons a i {
+            animation: floatY 3.6s ease-in-out infinite;
+            will-change: transform;
+        }
+        /* Increase Follow Us icon size */
+        .follow-icons a svg { width: 2.5rem; height: 2.5rem; }
+        .follow-icons a i { font-size: 2.25rem; }
+        .follow-icons a:nth-child(1) svg,
+        .follow-icons a:nth-child(1) i { animation-delay: 0s; }
+        .follow-icons a:nth-child(2) svg,
+        .follow-icons a:nth-child(2) i { animation-delay: 0.3s; }
+        .follow-icons a:nth-child(3) svg,
+        .follow-icons a:nth-child(3) i { animation-delay: 0.6s; }
+        .follow-icons a:nth-child(4) svg,
+        .follow-icons a:nth-child(4) i { animation-delay: 0.9s; }
+        /* Pulsing glow around icons */
+        .follow-orbits a {
+            position: relative;
+        }
+        .follow-orbits a::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(124,58,237,0.12), rgba(124,58,237,0));
+            filter: blur(6px);
+            opacity: 0.0;
+            animation: pulseGlow 3.6s ease-in-out infinite;
+            z-index: 0;
+        }
+        .follow-orbits a:nth-child(2)::before { animation-delay: 0.4s; }
+        .follow-orbits a:nth-child(3)::before { animation-delay: 0.8s; }
+        .follow-orbits a:nth-child(4)::before { animation-delay: 1.2s; }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.0; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .follow-icons a svg,
+            .follow-icons a i { animation: none; }
+
+            /* Increase size for 'You can also find us on' icons */
+            .sketch-highlight-bg .fa-solid,
+            .sketch-highlight-bg .fa-brands,
+            .sketch-highlight-bg i {
+                font-size: 1.75rem; /* slightly larger */
+                width: 2rem;
+                height: 2rem;
+            }
+
+            /* Show only icons for 'You can also find us on' and render them inside circles */
+            .sketch-highlight-bg .grid a {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 64px; /* circle width */
+                height: 64px; /* circle height */
+                padding: 0; /* remove extra padding */
+                border-radius: 9999px;
+                background: #fff; /* keep a clean white circle */
+                box-shadow: 0 6px 14px rgba(2,6,23,0.07);
+                gap: 0;
+            }
+            .sketch-highlight-bg .grid a span { display: none !important; }
+            .sketch-highlight-bg .grid a i,
+            .sketch-highlight-bg .grid a svg { font-size: 1.5rem; /* 24px */ width: auto; height: auto; }
+            /* Reduce the gap so icons sit closer together */
+            .sketch-highlight-bg .grid { gap: 0.75rem; justify-items: center; justify-content: center; }
+        }
+
+        /* Floating animation for Quick Actions icons */
+        .icon-btn svg { animation: floatY 4s ease-in-out infinite; will-change: transform; }
+        /* Stagger the delays across the visible row */
+        .icon-btn:nth-child(1) svg { animation-delay: 0s; }
+        .icon-btn:nth-child(2) svg { animation-delay: 0.4s; }
+        .icon-btn:nth-child(3) svg { animation-delay: 0.6s; }
+        .icon-btn:nth-child(4) svg { animation-delay: 0.8s; }
+        .icon-btn:nth-child(5) svg { animation-delay: 0.10s; }
+        @media (prefers-reduced-motion: reduce) {
+            .icon-btn svg { animation: none; }
+        }
+
+        /* Special Note box used in About section */
+        .special-note {
+            margin-top: 1rem;
+        }
+        .special-note-inner {
+            display: block;
+            background-color: #fbf7ff; /* very pale purple */
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            border-left: 6px solid #e9d5ff; /* left accent */
+            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.06);
+            position: relative;
+        }
+        .special-note-title {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.25rem;
+        }
+        .special-note-body {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        /* Decorative big quotes around special note text */
+        .special-note-inner::before,
+        .special-note-inner::after {
+            content: '"';
+            font-size: 48px;
+            color: #0f172a;
+            font-weight: 900;
+            position: absolute;
+            opacity: 0.95;
+            line-height: 1;
+        }
+        .special-note-inner::before { left: 12px; top: -10px; transform: translateY(-0.2rem); }
+        .special-note-inner::after { right: 12px; bottom: -6px; transform: rotate(180deg) translateY(0.2rem); }
+
+        @media (max-width: 640px) {
+            .special-note-inner::before,
+            .special-note-inner::after { font-size: 36px; }
+            .special-note-inner::before { left: 8px; top: -6px; }
+            .special-note-inner::after { right: 8px; bottom: -4px; }
+        }
+        /* Verified modal: framed image and action styling (match provided image) */
+        .verified-frame {
+            padding: 18px; /* white mat around framed image */
+            background: white;
+            border-radius: 10px;
+            box-shadow: none;
+            display: block;
+        }
+        .verified-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 8px solid #000; /* thick black frame */
+            border-radius: 6px;
+        }
+        .verified-download {
+            background: linear-gradient(90deg,#7c3aed,#6d28d9); /* purple gradient */
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(124,58,237,0.18);
+            font-weight: 700;
+            border: none;
+            align-items: center;
+        }
+        .verified-download svg { color: white; }
+        .verified-download:active { transform: translateY(1px); }
+        .verified-back {
+            background: transparent;
+            color: #111827;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+        }
+        /* Overlay that sits on top of the verified image (company name, stars, location, Google) */
+        .verified-frame { position: relative; }
+        .verified-overlay {
+            position: absolute;
+            right: 28px;
+            bottom: 36px;
+            width: 260px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none; /* decorative */
+        }
+        /* green ring removed per request */
+        .overlay-inner {
+            position: relative;
+            background: rgba(255,255,255,0.85);
+            border-radius: 12px;
+            padding: 10px 14px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .overlay-company { font-family: 'Kalam', cursive; font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+        .overlay-stars { margin-bottom: 8px; }
+        .overlay-stars .star { color: #cbd5e1; font-size: 20px; margin: 0 2px; }
+        .overlay-stars .star.filled { color: #fb923c; } /* orange-filled stars */
+        .overlay-location { color: #4b5563; font-weight: 700; margin-bottom: 6px; }
+        /* Google colored wordmark using colored letters */
+        .overlay-google { font-size: 34px; font-weight: 700; line-height: 1; }
+        .overlay-google .g { color: #4285F4; }
+        .overlay-google .o { color: #EA4335; }
+        .overlay-google .o2 { color: #FBBC05; }
+        .overlay-google .g2 { color: #4285F4; }
+        .overlay-google .l { color: #34A853; }
+        .overlay-google .e2 { color: #EA4335; }
+
+        @media (min-width: 768px) {
+            .special-note-inner {
+                padding: 1.25rem 1.5rem;
+                border-radius: 14px;
+            }
+        }
+
+        /* Mobile / tablet responsive adjustments */
+        @media (max-width: 768px) {
+            /* Verified modal: make image narrower and overlay smaller/move to center-right */
+            .verified-frame { max-width: 540px; margin: 0 auto; }
+            .verified-overlay { right: 16px; bottom: 20px; width: 220px; height: 180px; }
+            .overlay-google { font-size: 28px; }
+            .overlay-company { font-size: 18px; }
+
+            /* Modal content sizing */
+            #verified-modal-content { padding: 12px; max-width: 92%; }
+            .verified-download { padding: 10px 16px; font-size: 15px; }
+
+            /* Find-us grid collapse and center icons */
+            .sketch-highlight-bg .grid { grid-template-columns: repeat(3, 1fr); justify-items: center; }
+            .sketch-highlight-bg .grid a { margin: 0 auto; }
+
+            /* Reduce annotation visual clutter on small screens */
+            .sketch-annotation { display: none; }
+
+            /* Make photo carousel arrows visible and touch-friendly on phones */
+            #photos-prev,
+            #photos-next {
+                display: flex !important;
+                width: 44px;
+                height: 44px;
+                padding: 8px;
+                border-radius: 9999px;
+                background: rgba(255,255,255,0.95);
+                box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+                z-index: 40;
+            }
+            /* Position slightly inside the gallery for easier tapping */
+            #photos-prev { left: 6px !important; transform: translateY(-50%) !important; }
+            #photos-next { right: 6px !important; transform: translateY(-50%) !important; }
+            /* Make SVG icons slightly larger on touch devices */
+            #photos-prev svg, #photos-next svg { width: 20px; height: 20px; }
+
+            /* Gallery modal arrows: ensure visible on phones and touch-friendly */
+            #gallery-prev,
+            #gallery-next {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                padding: 8px;
+                border-radius: 9999px;
+                background: rgba(0,0,0,0.38) !important;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+                z-index: 80 !important;
+            }
+            #gallery-prev { left: 8px !important; }
+            #gallery-next { right: 8px !important; }
+            #gallery-prev svg, #gallery-next svg { width: 22px; height: 22px; }
+        }
+
+        @media (max-width: 420px) {
+            /* Verified overlay becomes tighter and centered horizontally */
+            .verified-overlay { right: 10px; bottom: 12px; width: 180px; height: 150px; }
+            .overlay-google { font-size: 24px; }
+            .overlay-company { font-size: 16px; }
+            .overlay-stars .star { font-size: 18px; }
+
+            /* Stack modal actions vertically on very small screens */
+            .mt-6.flex.items-center.justify-between { flex-direction: column; gap: 10px; align-items: stretch; }
+            .verified-download { width: 100%; justify-content: center; }
+            .verified-back { width: 100%; justify-content: center; }
+
+            /* Find-us icons: 2 columns on very small devices */
+            .sketch-highlight-bg .grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+        }
+        /* About section expand/collapse */
+        .about-extra {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 350ms ease, opacity 250ms ease;
+            opacity: 0;
+        }
+        .about-extra.open {
+            max-height: 600px; /* generous value for the expanded paragraph */
+            opacity: 1;
+        }
+        #toggle-about {
+            cursor: pointer;
+        }
+
+        /* Utility: visually hidden but accessible (screen readers) */
+        .sr-only {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        /* Find-us icon-only circular buttons */
+        .find-us-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 9999px;
+            background: #fff;
+            box-shadow: 0 6px 14px rgba(2,6,23,0.07);
+            transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+            gap: 0;
+        }
+        .find-us-btn i { font-size: 1.375rem; /* 22px */ line-height: 1; }
+        .find-us-btn:focus,
+        .find-us-btn:hover { transform: translateY(-2px); }

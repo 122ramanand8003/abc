@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Technology - Business Profile</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font Awesome for brand icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Google Fonts: Inter, Kalam for sketch effect, Playlist Script for handwritten headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&family=Playlist+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+    <!-- <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3ff; /* Light purple fallback */
+            /* Odoo-inspired subtle gradient background */
+            background-image: radial-gradient(circle at 1% 1%, #f3e8ff, transparent 40%), radial-gradient(circle at 99% 99%, #e9d5ff, transparent 40%);
+        }
+        /* Custom styles for a cleaner look */
+        .card {
+            background-color: white;
+            border-radius: 1.5rem; /* More rounded corners */
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border-radius: 9999px; /* Pill-shaped buttons */
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .btn-primary {
+            background-color: #7e22ce; /* Solid Odoo purple */
+            color: white;
+            box-shadow: 0 4px 14px rgba(126, 34, 206, 0.25);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #6d28d9;
+            box-shadow: 0 8px 20px rgba(126, 34, 206, 0.3);
+        }
+        .icon-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: 1.25rem; /* Slightly larger radius */
+            color: #374151;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+        .icon-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+            color: #7c3aed; /* Purple hover color */
+        }
+        
+        .icon-btn svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            stroke-width: 1.5;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-btn:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Styles for sketch annotations */
+        .sketch-text {
+            font-family: 'Kalam', cursive;
+            color: #4a044e; /* Dark purple */
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        /* Styles for form in popup */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #7e22ce;
+            box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #7e22ce, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Styles for star rating */
+        .star-rating svg {
+            color: #d1d5db; /* gray-300 */
+            transition: color 0.2s;
+        }
+        .star-rating:hover svg,
+        .star-rating svg.selected {
+            color: #f59e0b; /* amber-500 */
+        }
+
+        .underline-swoosh {
+            position: relative;
+            display: inline-block;
+        }
+        .underline-swoosh::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 22'%3E%3Cpath d='M1.33 15.11s43.58-15.22 103.88-10.3c60.3 4.92 90.96 1.07 101.48-1.12' fill='none' stroke='%238b5cf6' stroke-linecap='round' stroke-miterlimit='10' stroke-width='6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        /* Doodle/Brush Stroke Effects */
+        .brush-stroke-bg {
+            position: relative;
+            overflow: hidden; /* To contain the pseudo-element */
+        }
+        .brush-stroke-bg::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='100' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 10 50 Q 50 20 100 50 T 190 50' fill='none' stroke='rgba(233, 213, 255, 0.5)' stroke-width='40' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50% auto;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .brush-stroke-bg > * {
+            position: relative; /* Ensure content is on top of the pseudo-element */
+            z-index: 1;
+        }
+
+        .doodle-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='25' r='4' stroke='%23e9d5ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 70 15 L 80 25 M 80 15 L 70 25' stroke='%23e9d5ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 15 70 L 25 80 M 25 70 L 15 80' stroke='%23f3e8ff' stroke-width='3' fill='none'/%3E%3Ccircle cx='80' cy='75' r='6' stroke='%23f3e8ff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-color: #fcfaff; /* Slightly different bg to make doodle pop */
+        }
+        
+        /* New Sketch Highlight BG */
+        .sketch-highlight-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .sketch-highlight-bg::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='150' viewBox='0 0 200 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='8.7'%3E%3Cpath d='M -20 45 L 220 15' stroke='%23FBBF24' stroke-width='30' stroke-linecap='round' /%3E%3Cpath d='M -20 85 L 220 55' stroke='%23FBBF24' stroke-width='30' stroke-linecap='round' /%3E%3Cpath d='M -20 125 L 220 95' stroke='%23FBBF24' stroke-width='30' stroke-linecap='round' /%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .sketch-highlight-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+    </style> -->
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 shadow-sm sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+             <div class="flex items-center">
+                <span class="text-4xl font-black gradient-text">ABC</span>
+            </div>
+            <button id="open-business-modal" class="btn btn-primary">For Businesses</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <!-- Odoo-style Hero Section with Sketch Annotations -->
+        <div class="relative">
+            <section class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="text-center lg:text-left">
+                    <h1 class="underline-swoosh text-5xl md:text-7xl font-black text-gray-900 leading-tight">ABC <span class="swoosh-target">Technology</span></h1>
+                    <p class="text-xl text-gray-600 mt-8 max-w-xl mx-auto lg:mx-0">Digital Marketing, Web development</p>
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <button id="open-contact-modal" class="btn btn-primary w-full sm:w-auto">Get a Contact</button>
+                         <button id="open-verified-modal" class="inline-flex items-center gap-2 text-green-700 bg-white/50 px-3 py-2 rounded-full border border-green-300 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md hover:border-green-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="font-semibold text-base">VERIFIED BUSINESS</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                     <div class="bg-white p-4 rounded-3xl shadow-2xl shadow-purple-200">
+                        <img src="./assets/banner.jpg" alt="Company Logo" class="rounded-2xl">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sketch Annotations -->
+            <div class="hidden lg:block">
+                <!-- Annotation for "Get a Quote" / Start here (repositioned to avoid overlap) -->
+                <div class="sketch-annotation sketch-annotation-start" aria-hidden="true">
+                    <span class="sketch-text">Start here!</span>
+                </div>
+
+                <!-- Annotation for Logo -->
+                <div class="sketch-annotation sketch-annotation-logo">
+                     <span class="sketch-text">Our Brand</span>
+                    <svg width="100" height="80" viewBox="0 0 100 80" class="sketch-arrow logo-arrow">
+                        <path d="M95,5 C70,25, 30,15, 5,45" stroke="#4a044e" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrowhead-2)"/>
+                         <defs>
+                            <marker id="arrowhead-2" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#4a044e"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+
+                 <!-- Annotation for Verified (moved slightly to avoid clashing with Start here) -->
+                <div class="sketch-annotation sketch-annotation-verified">
+                     <span class="sketch-text ml-2">Trusted!</span>
+                    <svg width="60" height="50" viewBox="0 0 60 50" class="sketch-arrow verified-arrow">
+                        <path d="M5,5 C15,25, 35,25, 45,10" stroke="#4a044e" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrowhead-3)"/>
+                         <defs>
+                            <marker id="arrowhead-3" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#4a044e"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    <!-- Quick Actions (aligned to same width as About card) -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-16">
+            <a href="#" class="icon-btn icon-btn-call">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 208.8 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z"/>
+                </svg>
+                <span>Call Us</span>
+            </a>
+            <a href="#" class="icon-btn icon-btn-whatsapp">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 640 640">
+                    <path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/>
+                </svg>
+                <span>Whatsapp</span>
+            </a>
+            <a href="#" class="icon-btn icon-btn-website">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M415.9 344L225 344C227.9 408.5 242.2 467.9 262.5 511.4C273.9 535.9 286.2 553.2 297.6 563.8C308.8 574.3 316.5 576 320.5 576C324.5 576 332.2 574.3 343.4 563.8C354.8 553.2 367.1 535.8 378.5 511.4C398.8 467.9 413.1 408.5 416 344zM224.9 296L415.8 296C413 231.5 398.7 172.1 378.4 128.6C367 104.2 354.7 86.8 343.3 76.2C332.1 65.7 324.4 64 320.4 64C316.4 64 308.7 65.7 297.5 76.2C286.1 86.8 273.8 104.2 262.4 128.6C242.1 172.1 227.8 231.5 224.9 296zM176.9 296C180.4 210.4 202.5 130.9 234.8 78.7C142.7 111.3 74.9 195.2 65.5 296L176.9 296zM65.5 344C74.9 444.8 142.7 528.7 234.8 561.3C202.5 509.1 180.4 429.6 176.9 344L65.5 344zM463.9 344C460.4 429.6 438.3 509.1 406 561.3C498.1 528.6 565.9 444.8 575.3 344L463.9 344zM575.3 296C565.9 195.2 498.1 111.3 406 78.7C438.3 130.9 460.4 210.4 463.9 296L575.3 296z"/>
+                </svg>
+                <span>Website</span>
+            </a>
+            <a href="#" class="icon-btn icon-btn-email">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"/>
+                </svg>
+                <span>Email</span>
+            </a>
+            <a href="#" id="open-location-modal" class="icon-btn icon-btn-location">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+                </svg>
+                <span>Location</span>
+            </a>
+        </section>
+
+        <div class="max-w-6xl mx-auto space-y-8">
+             <!-- About Us Card -->
+            <div class="card brush-stroke-bg">
+                <h2 class="section-title">About Our Business</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. <a id="toggle-about-inline" href="#" class="read-more-inline text-indigo-600 font-medium ml-2" aria-expanded="false">Read More…</a>
+                </p>
+                <!-- Special Note box (left-accent, pale purple background) -->
+                <div class="special-note mt-4">
+                    <div class="special-note-inner">
+                        <div class="special-note-title">Special Note</div>
+                        <div class="special-note-body">This is a special note for the customers that will be displayed here. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</div>
+                    </div>
+                </div>
+
+                <!-- Inline Read more link (appended to the paragraph) -->
+                <div class="mt-6 text-center sr-only" aria-hidden="true">
+                    <!-- kept for backwards compatibility in case scripts query #toggle-about briefly; hidden from sighted users -->
+                    <button id="toggle-about" class="btn btn-primary" aria-expanded="false">Read more</button>
+                </div>
+
+                <!-- Hidden expanded content that will reveal on Read more -->
+                <div id="about-extra" class="about-extra text-gray-600 leading-relaxed mt-6" aria-hidden="true">
+                    <p>
+                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English. Our business focuses on delivering high-quality services with a personal touch — we value transparency, quick turnaround and customer satisfaction above all.
+                    </p>
+                    <p>
+                        We provide tailored solutions to meet a wide range of customer needs. From initial consultation to post-delivery support, our team is committed to helping you succeed. Reach out to learn how we can collaborate and create value for your business.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Photos Card -->
+            <div class="card">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="section-title !mb-0 !pb-0 !border-0">Photos</h2>
+                    <a href="#" id="open-gallery-all" class="font-semibold text-indigo-600 hover:text-indigo-500">See All 100+ &rarr;</a>
+                </div>
+                <div class="relative">
+                    <!-- Left/Right arrows for Photos section -->
+                    <button id="photos-prev" class="flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 bg-white/80 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full shadow p-2 border border-gray-200 z-10" aria-label="Previous photo">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="photos-next" class="flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 bg-white/80 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full shadow p-2 border border-gray-200 z-10" aria-label="Next photo">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="#" class="gallery-item cursor-pointer" data-index="0">
+                        <img src="./assets/1.png" alt="Gallery image 1" class="rounded-xl w-full h-full object-cover aspect-square">
+                    </a>
+                    <a href="#" class="gallery-item cursor-pointer" data-index="1">
+                         <img src="./assets/2.png" alt="Gallery image 2" class="rounded-xl w-full h-full object-cover aspect-square">
+                    </a>
+                    <a href="#" class="gallery-item cursor-pointer" data-index="2">
+                        <img src="./assets/3.png" alt="Gallery image 3" class="rounded-xl w-full h-full object-cover aspect-square">
+                    </a>
+                    <a href="#" class="gallery-item cursor-pointer" data-index="3">
+                         <img src="./assets/4.png" alt="Gallery image 4" class="rounded-xl w-full h-full object-cover aspect-square">
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amenities Card -->
+            <div class="card sketch-highlight-bg">
+                <h2 class="section-title">Amenities</h2>
+                <div class="grid md:grid-cols-3 gap-y-4 gap-x-6">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                        <span class="text-gray-700">Modern Workstations</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                        <span class="text-gray-700">Learning Hub</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                        <span class="text-gray-700">Hybrid Work Options</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                        <span class="text-gray-700">High-Speed Internet</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                        <span class="text-gray-700">Free Coffee & Tea</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                        <span class="text-gray-700">Meeting Rooms</span>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="open-amenities-modal" class="font-semibold text-indigo-600 hover:text-indigo-500">Read More &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Business Hours & Highlights Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Business Hours Card -->
+                <div class="card brush-stroke-bg">
+                    <h2 class="section-title">Business Hours</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex justify-between"><span>Monday</span> <span class="font-semibold text-gray-700">9am - 5pm</span></li>
+                        <li class="flex justify-between"><span>Tuesday</span> <span class="font-semibold text-gray-700">9am - 5pm</span></li>
+                        <li class="flex justify-between"><span>Wednesday</span> <span class="font-semibold text-gray-700">9am - 5pm</span></li>
+                        <li class="flex justify-between"><span>Thursday</span> <span class="font-semibold text-gray-700">9am - 5pm</span></li>
+                        <li class="flex justify-between"><span>Friday</span> <span class="font-semibold text-gray-700">9am - 5pm</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span class="font-semibold text-gray-700">9am - 5pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span class="font-semibold text-red-500">Closed</span></li>
+                    </ul>
+                </div>
+        
+                <!-- Highlights Card -->
+                 <div class="card brush-stroke-bg">
+                    <h2 class="section-title">Highlights</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-gray-700">End-to-End IT Solutions</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-gray-700">24/7 Support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-gray-700">Data Security First</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-gray-700">Client-Centric Approach</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                            <span class="text-gray-700">Proven Track Record</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Card -->
+            <div class="card sketch-highlight-bg">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <h2 class="section-title !mb-0 !pb-0 !border-0">Reviews & Ratings</h2>
+                    <button id="open-review-modal" class="btn btn-primary mt-4 sm:mt-0 !rounded-lg">Write a Review</button>
+                </div>
+                <!-- Rating Summary -->
+                <div class="relative">
+                    <div class="flex flex-col sm:flex-row items-center gap-8 bg-gray-50 p-6 rounded-2xl mb-8">
+                        <div class="text-center">
+                            <p class="text-5xl font-bold text-amber-500">4.8</p>
+                            <div class="flex justify-center text-amber-500 mt-1">
+                                <!-- Stars -->
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Based on 85 Reviews</p>
+                        </div>
+                        <div class="w-full flex-1">
+                            <!-- Rating bars -->
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-sm font-medium text-gray-600 w-12 text-right">5 star</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-amber-400 h-2.5 rounded-full" style="width: 85%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-sm font-medium text-gray-600 w-12 text-right">4 star</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-amber-400 h-2.5 rounded-full" style="width: 10%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-sm font-medium text-gray-600 w-12 text-right">3 star</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-amber-400 h-2.5 rounded-full" style="width: 3%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-sm font-medium text-gray-600 w-12 text-right">2 star</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-amber-400 h-2.5 rounded-full" style="width: 1%"></div></div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-medium text-gray-600 w-12 text-right">1 star</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-amber-400 h-2.5 rounded-full" style="width: 1%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Sketch Arrow Annotation -->
+                    <div class="relative flex justify-center items-start my-6 h-20 md:h-24">
+                        <span class="sketch-text absolute top-0 left-1/2 -translate-x-1/2 md:-translate-x-full md:-ml-8 md:rotate-[-10deg] text-sm md:text-base whitespace-nowrap z-10">Our customers love us!</span>
+                        <img src="./svg/grey_arrow_loop_02.svg" alt="Doodle arrow" class="h-24 w-auto">
+                    </div>
+
+                    <div id="reviews-list" class="space-y-6" aria-live="polite">
+                        <!-- Reviews are rendered by script.js. First 3 are shown by default; toggle button below expands to show all 10. -->
+                    </div>
+                    <div class="text-center mt-6">
+                        <button id="toggle-reviews" class="font-semibold text-indigo-600 hover:text-indigo-500" aria-expanded="false" aria-controls="reviews-list">Show more reviews</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow Us & Socials (stacked so each card matches Reviews width) -->
+            <div class="space-y-8">
+               <!-- You can also find us on Card -->
+                <div class="card sketch-highlight-bg">
+                    <h2 class="section-title">You can also find us on</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <a href="#" class="find-us-btn brand-justdial" aria-label="Justdial">
+                            <i class="fa-solid fa-location-dot text-rose-500" aria-hidden="true"></i>
+                            <span class="sr-only">Justdial</span>
+                        </a>
+                        <a href="#" class="find-us-btn brand-indiamart" aria-label="IndiaMART">
+                            <i class="fa-solid fa-store text-emerald-600" aria-hidden="true"></i>
+                            <span class="sr-only">IndiaMART</span>
+                        </a>
+                        <a href="#" class="find-us-btn brand-google" aria-label="Google Business">
+                            <i class="fa-solid fa-store text-blue-600" aria-hidden="true"></i>
+                            <span class="sr-only">Google Business</span>
+                        </a>
+                        <a href="#" class="find-us-btn brand-youtube" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-red-600" aria-hidden="true"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                        <a href="#" class="find-us-btn brand-twitter" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter text-blue-500" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                        <a href="#" class="find-us-btn brand-local" aria-label="Local Business">
+                            <i class="fa-solid fa-city text-indigo-600" aria-hidden="true"></i>
+                            <span class="sr-only">Local Business</span>
+                        </a>
+                    </div>
+                     <div class="text-center mt-6">
+                        <button id="toggle-find-us" class="font-semibold text-indigo-600 hover:text-indigo-500" aria-expanded="false" aria-controls="find-us-extra">See More &rarr;</button>
+                    </div>
+                    <!-- Hidden extra links (expanded by toggle) -->
+                    <div id="find-us-extra" class="mt-4 hidden">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <a href="#" class="find-us-btn" aria-label="Sulekha">
+                                    <i class="fa-solid fa-bag-shopping text-amber-600" aria-hidden="true"></i>
+                                    <span class="sr-only">Sulekha</span>
+                                </a>
+                                <a href="#" class="find-us-btn" aria-label="Justdial Pro">
+                                    <i class="fa-solid fa-briefcase text-rose-500" aria-hidden="true"></i>
+                                    <span class="sr-only">Justdial Pro</span>
+                                </a>
+                                <a href="#" class="find-us-btn" aria-label="Facebook Page">
+                                    <i class="fa-brands fa-facebook text-blue-600" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook Page</span>
+                                </a>
+                                <a href="#" class="find-us-btn" aria-label="Local Directory">
+                                    <i class="fa-solid fa-book text-indigo-600" aria-hidden="true"></i>
+                                    <span class="sr-only">Local Directory</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow Us Card (moved last) -->
+                <div class="card brush-stroke-bg">
+                    <h2 class="section-title">Follow Us On</h2>
+                    <div class="flex justify-around items-center follow-icons">
+                        <a href="#" class="brand-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="brand-twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="brand-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="brand-linkedin" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <nav class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-300 hover:text-white">About Us</a>
+                <a href="#" class="text-gray-300 hover:text-white">Contact Us</a>
+                <a href="#" class="text-gray-300 hover:text-white">Terms & Conditions</a>
+                <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
+            </nav>
+            <p class="text-gray-400">&copy; 2025 ABC Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Get a Contact Popup Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="contact-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform transition-all scale-95 opacity-0 relative">
+            <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Contact Us</h2>
+             <form id="contact-form" action="#" method="POST">
+                <div class="space-y-5">
+                    <div>
+                        <label for="contact-name" class="font-medium text-gray-700">Name</label>
+                        <input type="text" name="contact-name" id="contact-name" class="form-input mt-1" required>
+                    </div>
+                    <div>
+                        <label for="contact-phone" class="font-medium text-gray-700">Phone</label>
+                        <input type="tel" name="contact-phone" id="contact-phone" class="form-input mt-1" required>
+                    </div>
+                    <div>
+                        <label for="contact-message" class="font-medium text-gray-700">Message</label>
+                        <textarea name="contact-message" id="contact-message" rows="4" class="form-input mt-1"></textarea>
+                    </div>
+                    <div class="text-right">
+                         <button type="submit" class="btn btn-primary !rounded-lg px-6">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Verified Business Popup Modal -->
+    <div id="verified-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="verified-modal-content" class="bg-white rounded-2xl shadow-2xl p-4 text-center max-w-lg w-full transform transition-all scale-95 opacity-0 relative">
+            <button id="close-verified-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 bg-white/70 rounded-full p-1 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="verified-frame mx-auto max-w-3xl">
+                <img src="./assets/customer-choice.jpg" alt="Customer Choice Award 2023" class="verified-img">
+                <div class="verified-overlay" aria-hidden="true">
+                    <div class="overlay-inner">
+                        <h3 class="overlay-company">ABC Technology</h3>
+                        <div class="overlay-stars" aria-hidden="true">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="overlay-location">Andheri Mumbai</div>
+                        <div class="overlay-google" role="img" aria-label="Google"> 
+                            <span class="g">G</span><span class="o">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e2">e</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Action controls: prominent purple Download and minimal Back -->
+            <div class="mt-6 flex items-center justify-between max-w-3xl mx-auto px-4">
+                <button id="download-verified" class="verified-download inline-flex items-center gap-3" aria-label="Download award image">
+                    <!-- Download cloud icon -->
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2"/><path d="M7 10l5-5 5 5"/><path d="M12 5v10"/></svg>
+                    <span>Download</span>
+                </button>
+                <button id="back-verified" class="verified-back inline-flex items-center gap-2" aria-label="Go back">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+                    <span>Back</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Businesses Form Popup Modal -->
+    <div id="business-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="business-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform transition-all scale-95 opacity-0 relative">
+            <button id="close-business-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Business Inquiry</h2>
+            <form id="business-form" action="#" method="POST">
+                <div class="space-y-5">
+                    <div>
+                        <label for="name" class="font-medium text-gray-700">Name</label>
+                        <input type="text" name="name" id="name" class="form-input mt-1" required>
+                    </div>
+                    <div>
+                        <label for="business-name" class="font-medium text-gray-700">Business Name</label>
+                        <input type="text" name="business-name" id="business-name" class="form-input mt-1">
+                    </div>
+                    <div>
+                        <label for="phone" class="font-medium text-gray-700">Phone</label>
+                        <input type="tel" name="phone" id="phone" class="form-input mt-1" required>
+                    </div>
+                    <div>
+                        <label for="email" class="font-medium text-gray-700">Email</label>
+                        <input type="email" name="email" id="email" class="form-input mt-1" required>
+                    </div>
+                    <div>
+                        <label for="message" class="font-medium text-gray-700">Message</label>
+                        <textarea name="message" id="message" rows="4" class="form-input mt-1"></textarea>
+                    </div>
+                    <div class="text-right">
+                         <button type="submit" class="btn btn-primary !rounded-lg px-6">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thank You Popup Modal -->
+    <div id="thank-you-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="thank-you-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center transform transition-all scale-95 opacity-0 relative">
+            <button id="close-thank-you-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="mx-auto bg-green-100 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
+            <p class="text-gray-600">We have received your inquiry. Someone from our team will get back to you.</p>
+        </div>
+    </div>
+
+    <!-- Write a Review Popup Modal -->
+    <div id="review-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="review-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform transition-all scale-95 opacity-0 relative">
+             <button id="close-review-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Write a Review</h2>
+            <form id="review-form">
+                <div class="space-y-5">
+                    <div>
+                        <div id="star-rating-input" class="flex items-center gap-1 cursor-pointer star-rating">
+                           <svg data-value="1" class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg data-value="2" class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg data-value="3" class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg data-value="4" class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg data-value="5" class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <input type="hidden" name="rating" id="rating-value" required>
+                    </div>
+                    <div>
+                        <input type="text" name="review-name" id="review-name" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <textarea name="review-message" id="review-message" rows="4" class="form-input" placeholder="Tell us about your experience with this business" required></textarea>
+                    </div>
+                    <div class="text-right">
+                         <button type="submit" class="btn btn-primary !rounded-lg px-6">Rate Now</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <!-- Gallery Popup Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center p-4 z-[60] backdrop-blur-sm">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Close Button -->
+            <button id="close-gallery-modal" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <!-- Prev Button -->
+            <button id="gallery-prev" class="absolute left-4 md:left-8 text-white bg-black/30 hover:bg-black/50 p-3 rounded-full">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <!-- Next Button -->
+            <button id="gallery-next" class="absolute right-4 md:right-8 text-white bg-black/30 hover:bg-black/50 p-3 rounded-full">
+                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <!-- Image Container -->
+            <div class="w-full max-w-4xl max-h-[90vh]">
+                <img id="gallery-image" src="" alt="Gallery View" class="w-full h-full object-contain transform transition-all duration-300 scale-95 opacity-0">
+            </div>
+        </div>
+    </div>
+
+    <!-- Amenities Popup Modal -->
+    <div id="amenities-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="amenities-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform transition-all scale-95 opacity-0 relative">
+            <button id="close-amenities-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Amenities</h2>
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span class="text-gray-700">Modern Workstations</span>
+                </div>
+                 <div class="flex items-center gap-3">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span class="text-gray-700">Learning Hub</span>
+                </div>
+                 <div class="flex items-center gap-3">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span class="text-gray-700">Hybrid Work Options</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span class="text-gray-700">High-Speed Internet</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span class="text-gray-700">Free Coffee & Tea</span>
+                </div>
+                 <div class="flex items-center gap-3">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span class="text-gray-700">Meeting Rooms</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- All Reviews Popup Modal -->
+    <div id="reviews-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="reviews-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full transform transition-all scale-95 opacity-0 relative max-h-[90vh] overflow-y-auto">
+            <button id="close-reviews-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">More Reviews</h2>
+            <div class="space-y-6">
+                <!-- Review 1 -->
+                <div class="border-t border-gray-200 pt-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Rohan Mehta</h4>
+                            <p class="text-sm text-gray-500">June 20, 2023</p>
+                        </div>
+                        <div class="flex text-amber-500">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-2">The team at ABC Technology is incredibly knowledgeable. They developed a fantastic website for our business and the results from their marketing campaign have been outstanding.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="border-t border-gray-200 pt-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Priya Sharma</h4>
+                            <p class="text-sm text-gray-500">May 15, 2023</p>
+                        </div>
+                        <div class="flex text-amber-500">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                           <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-2">Good service overall. The project was delivered on time. There was a small communication gap initially, but it was resolved quickly. Happy with the final product.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Popup Modal -->
+    <div id="location-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="location-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full transform transition-all scale-95 opacity-0 relative">
+            <button id="close-location-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Location</h2>
+            <div class="rounded-lg overflow-hidden h-96">
+                <iframe 
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Plot%20No.%2016%20A%2010,%20Hirabhai%20V.%20Patel%20Marg,%20Hirabhai%20V.%20Patel%20Marg,%20MHADA%20Colony,%20Lokhandwala%20Twp,%20Kandivali%20East,%20Mumbai,%20Maharashtra%20400101,%20India+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
+                    class="w-full h-full" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+        <!-- Find Us On More Popup Modal -->
+      <div id="find-us-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div id="find-us-modal-content" class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full transform transition-all scale-95 opacity-0 relative">
+            <button id="close-find-us-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Find Us On</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                    <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 9h-4v11h4V9zM4.5 14c-1.1 0-2 .9-2 2v3h4v-3c0-1.1-.9-2-2-2zM21 9h-4v11h4V9zM19.5 5c-1.1 0-2 .9-2 2v1h4V7c0-1.1-.9-2-2-2z"/></svg>
+                    <span class="font-semibold text-gray-700">Behance</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                    <svg class="w-8 h-8 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4.1-10.29c.17.02.35.04.53.04.79 0 1.5-.21 2.11-.64-.9.84-2.02 1.39-3.3 1.39-.41 0-.81-.07-1.19-.2.53.89 1.55 1.5 2.72 1.5 2.21 0 4-1.79 4-4 0-1.04-.4-1.98-1.06-2.67-.34-.35-.73-.65-1.16-.89.17-.01.35-.02.53-.02 1.14 0 2.17.43 2.97 1.15-1.14-.58-2.43-.94-3.81-.94-2.21 0-4 1.79-4 4 0 .42.06.83.18 1.22z"/></svg>
+                    <span class="font-semibold text-gray-700">Dribbble</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+<!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Generic Modal Controller ---
+            const setupModal = (modalId, openBtnId, closeBtnId, onOpen = () => {}, onClose = () => {}) => {
+                const modal = document.getElementById(modalId);
+                if (!modal) return { open: () => {}, close: () => {} }; // Return dummy functions if modal not found
+                const modalContent = modal.querySelector('div');
+                const openBtn = document.getElementById(openBtnId);
+                const closeBtn = document.getElementById(closeBtnId);
+
+                const open = () => {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    setTimeout(() => {
+                        if(modalContent) modalContent.classList.remove('scale-95', 'opacity-0');
+                    }, 50);
+                    onOpen();
+                };
+
+                const close = () => {
+                    if(modalContent) modalContent.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                        onClose();
+                    }, 200);
+                };
+
+                if (openBtn) openBtn.addEventListener('click', open);
+                if (closeBtn) closeBtn.addEventListener('click', close);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) close();
+                });
+
+                return { open, close };
+            };
+
+            // Initialize all modals
+            const contactModal = setupModal('contact-modal', 'open-contact-modal', 'close-contact-modal');
+            const verifiedModal = setupModal('verified-modal', 'open-verified-modal', 'close-verified-modal');
+            const businessModal = setupModal('business-modal', 'open-business-modal', 'close-business-modal');
+            const thankYouModal = setupModal('thank-you-modal', null, 'close-thank-you-modal');
+            const reviewModal = setupModal('review-modal', 'open-review-modal', 'close-review-modal');
+            const amenitiesModal = setupModal('amenities-modal', 'open-amenities-modal', 'close-amenities-modal');
+            const allReviewsModal = setupModal('reviews-modal', 'open-reviews-modal', 'close-reviews-modal');
+            const locationModal = setupModal('location-modal', 'open-location-modal', 'close-location-modal');
+            const findUsModal = setupModal('find-us-modal', 'open-find-us-modal', 'close-find-us-modal');
+
+            // --- Form Submission Logic ---
+            const businessForm = document.getElementById('business-form');
+            if(businessForm) {
+                businessForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    businessModal.close();
+                    setTimeout(() => thankYouModal.open(), 250);
+                    businessForm.reset();
+                });
+            }
+            
+            const reviewForm = document.getElementById('review-form');
+            if(reviewForm) {
+                reviewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    reviewModal.close();
+                    setTimeout(() => thankYouModal.open(), 250);
+                    reviewForm.reset();
+                    // Reset stars
+                    document.querySelectorAll('#star-rating-input svg').forEach(s => s.classList.remove('selected'));
+                });
+            }
+
+            const contactForm = document.getElementById('contact-form');
+            if(contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    contactModal.close();
+                    setTimeout(() => thankYouModal.open(), 250);
+                    contactForm.reset();
+                });
+            }
+
+            // --- Star Rating Logic ---
+            const starRatingContainer = document.getElementById('star-rating-input');
+            if(starRatingContainer){
+                const stars = starRatingContainer.querySelectorAll('svg');
+                const ratingValueInput = document.getElementById('rating-value');
+                let currentRating = 0;
+
+                stars.forEach(star => {
+                    star.addEventListener('mouseover', () => {
+                        const hoverValue = parseInt(star.dataset.value);
+                        stars.forEach(s => {
+                            s.style.color = parseInt(s.dataset.value) <= hoverValue ? '#f59e0b' : '#d1d5db';
+                        });
+                    });
+
+                    star.addEventListener('mouseout', () => {
+                        stars.forEach(s => {
+                            s.style.color = parseInt(s.dataset.value) <= currentRating ? '#f59e0b' : '#d1d5db';
+                        });
+                    });
+
+                    star.addEventListener('click', () => {
+                        currentRating = parseInt(star.dataset.value);
+                        ratingValueInput.value = currentRating;
+                        stars.forEach(s => {
+                             s.classList.toggle('selected', parseInt(s.dataset.value) <= currentRating);
+                        });
+                    });
+                });
+            }
+
+            // --- Gallery Modal Logic ---
+            const galleryModalEl = document.getElementById('gallery-modal');
+            const galleryImage = document.getElementById('gallery-image');
+            const closeGalleryBtn = document.getElementById('close-gallery-modal');
+            const prevBtn = document.getElementById('gallery-prev');
+            const nextBtn = document.getElementById('gallery-next');
+            
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+            let currentIndex = 0;
+
+            const showImage = (index) => {
+                if(galleryImage) {
+                    galleryImage.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => {
+                        galleryImage.src = images[index];
+                        galleryImage.classList.remove('scale-95', 'opacity-0');
+                    }, 150);
+                }
+                currentIndex = index;
+            };
+
+            const openGallery = (index) => {
+                if(!galleryModalEl) return;
+                currentIndex = index;
+                if(galleryImage) {
+                    galleryImage.src = images[index];
+                }
+                galleryModalEl.classList.remove('hidden');
+                galleryModalEl.classList.add('flex');
+                setTimeout(() => {
+                    if(galleryImage) galleryImage.classList.remove('scale-95', 'opacity-0');
+                }, 50);
+            };
+
+            const closeGallery = () => {
+                 if(!galleryModalEl) return;
+                 if(galleryImage) galleryImage.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    galleryModalEl.classList.add('hidden');
+                    galleryModalEl.classList.remove('flex');
+                }, 300);
+            };
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const index = parseInt(item.dataset.index, 10);
+                    openGallery(index);
+                });
+            });
+
+            const openGalleryAllBtn = document.getElementById('open-gallery-all');
+            if (openGalleryAllBtn) {
+                openGalleryAllBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openGallery(0);
+                });
+            }
+
+            if(prevBtn) prevBtn.addEventListener('click', () => {
+                const newIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(newIndex);
+            });
+
+            if(nextBtn) nextBtn.addEventListener('click', () => {
+                const newIndex = (currentIndex + 1) % images.length;
+                showImage(newIndex);
+            });
+
+            if(closeGalleryBtn) closeGalleryBtn.addEventListener('click', closeGallery);
+            if(galleryModalEl) galleryModalEl.addEventListener('click', (e) => {
+                if (e.target === galleryModalEl) {
+                    closeGallery();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (galleryModalEl && !galleryModalEl.classList.contains('hidden')) {
+                    if (e.key === 'ArrowLeft') {
+                        if(prevBtn) prevBtn.click();
+                    } else if (e.key === 'ArrowRight') {
+                        if(nextBtn) nextBtn.click();
+                    } else if (e.key === 'Escape') {
+                        closeGallery();
+                    }
+                }
+            });
+        });
+    </script>
+     -->
+</body>
+</html>
+
